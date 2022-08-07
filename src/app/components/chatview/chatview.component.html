@@ -1,0 +1,36 @@
+<h1 class="text-center jumbotron">You can chat with bot here 😄 </h1>
+
+<div class="message-wrapper mb-5">
+
+  <div class="chat-bubble mb-5" [ngStyle]="{'display': (!sentStatus) ? 'none' : 'inline-block' }"
+       [ngClass]="true?'right':'left'">
+
+    <div class="message"></div>
+
+    <div class="message-detail">
+      <span class="bold">{{requestMessage}}</span>
+    </div>
+
+  </div>
+
+  <div class="cf"></div>
+
+  <div class="chat-bubble mb-5" [ngStyle]="{'display': (!receivedStatus) ? 'none' : 'inline-block' }"
+       [ngClass]="false?'right':'left'">
+
+    <div class="message"></div>
+
+    <div class="message-detail">
+      <span class="bold">{{responseMessage}}</span>
+    </div>
+
+  </div>
+
+
+  <div class="cf"></div>
+</div>
+
+<div class="form-input">
+  <input (keyup.enter)="sendMessage()" [(ngModel)]="textMessage" placeholder="Say Something and press Enter"
+         class="border-input">
+</div>
